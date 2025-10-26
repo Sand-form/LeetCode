@@ -1,6 +1,5 @@
 package string;
 
-
 import java.util.*;
 
 /**
@@ -58,7 +57,7 @@ public class l49_groupAnagrams {
             sb.append("[");
             for(int j = 0; j < group.size(); j++) {
                 sb.append("\"").append(group.get(j)).append("\"");
-                if(j != group.size()) {
+                if(j != group.size() - 1) {
                     sb.append(",");
                 }
             }
