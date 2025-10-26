@@ -41,9 +41,15 @@ public class l49_groupAnagrams {
     public static List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
         for(String str : strs) {
+            // 转换成字符数组后排序
             char[] array = str.toCharArray();
             Arrays.sort(array);
             String key = new String(array);
+            // 希望把字母一样、顺序不同的单词放到同一组中
+            /*if(!map.containsKey(key)) {
+                map.put(key, new ArrayList<>());
+            }
+            map.get(key).add(str);*/
             map.computeIfAbsent(key, k -> new ArrayList<>()).add(str);
         }
         return new ArrayList<>(map.values());
