@@ -39,6 +39,7 @@ class PriorityTask implements Runnable, Comparable<PriorityTask> {
 
     @Override
     public int compareTo(PriorityTask other) {
+        // 如果返回负数，表示当前对象小，排在前面
         return Integer.compare(this.priority, other.priority);
     }
 }
